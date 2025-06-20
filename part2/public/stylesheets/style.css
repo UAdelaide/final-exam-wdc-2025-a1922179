@@ -109,6 +109,7 @@ button:hover {
 #table-dog {
     margin: 0 auto;
     border-collapse: collapse;
+    text-align: left;
 }
 
 .right {
