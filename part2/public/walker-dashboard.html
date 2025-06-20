@@ -10,7 +10,7 @@
 <body class="bg-light">
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
-    <button type="submit" class="btn btn-success" @click="LogOut">Log Out</button>
+    <button type="submit" class="btn btn-success" @click="logOut">Log Out</button>
 
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
@@ -72,6 +72,16 @@
           } catch (err) {
             error.value = err.message;
             message.value = '';
+          }
+        }
+
+        async function logOut() {
+          try {
+            const res = await fetch('/api/walks');
+            if (!res.ok) throw new Error('Failed to load walk requests');
+            walks.value = await res.json();
+          } catch (err) {
+            error.value = err.message;
           }
         }
 
