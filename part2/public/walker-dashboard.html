@@ -79,7 +79,6 @@
           try {
             const res = await fetch('/api/walks/logout');
             if (!res.ok) throw new Error('Failed to log out');
-            walks.value = await res.json();
           } catch (err) {
             error.value = err.message;
           }
