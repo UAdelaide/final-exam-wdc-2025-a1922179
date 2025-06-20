@@ -8,7 +8,7 @@ router.get('/dogs', async (req, res) => {
 });
 
 router.get('/walkrequests/open', async (req, res) => {
-    const [rows] = await db.query('SELECT WalkRequests.request_id');
+    const [rows] = await db.query('SELECT WalkRequests.request_id, Dogs.');
     res.json(rows);
 });
 
