@@ -46,12 +46,11 @@
               throw new Error('Failed to login');
             } else {
               const data = await response.json();
-              if (response.role == 'walker') {
+              if (data.role === 'walker') {
                 window.location.href = '/walker-dashboard.html';
               } else {
                 window.location.href = '/owner-dashboard.html';
               }
-              //redirect to other page
             }
           } catch (error) {
             console.log("Failed to login", error);
