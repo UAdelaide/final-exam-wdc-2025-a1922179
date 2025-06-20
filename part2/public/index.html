@@ -42,10 +42,14 @@
                 password: this.password
               })
             });
-            if (!res.ok) throw new Error('Failed to login');
+            if (!res.ok) {
+              throw new Error('Failed to login');
+            } else {
+              
+            }
             const data = res.json();
 
-            
+
           } catch (error) {
 
           }
