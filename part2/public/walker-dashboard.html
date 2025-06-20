@@ -79,7 +79,7 @@
           try {
             const response = await fetch('/api/users/me');
             const data = await response.json();
-            this.dog = data.message;
+            return data.user.user_id;
           } catch (error) {
             console.log("Failed to fetch image", error);
           }
