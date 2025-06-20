@@ -101,6 +101,7 @@ button:hover {
 }
 
 #logout {
+    padding: 20px;
     display: block;
     justify-content: right;
 }
