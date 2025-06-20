@@ -88,7 +88,7 @@
             this.dogs = await res.json();
           }
         } catch (error) {
-          console.log("Failed to login", error);
+          console.log("Failed to fetch dogs", error);
         }
       }
     }).mount('#app');
