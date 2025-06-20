@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/api/dogs', require('./part1/routes/dogRoutes'));
+app.use('/api/dogs', require('./part1/routes/dog_service'));
 
 app.use(session({
     secret: 'superSecretSession',
