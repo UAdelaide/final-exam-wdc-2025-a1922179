@@ -79,12 +79,12 @@
           try {
             const response = await fetch('/api/users/me');
             const data = await response.json();
-            return data.user.user_id;
+            return data.user_id;
           } catch (error) {
             console.log("Failed to fetch user details", error);
           }
         }
-        
+
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
