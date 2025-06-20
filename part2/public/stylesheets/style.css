@@ -100,6 +100,9 @@ button:hover {
     background-color: rgb(0, 120, 230);
 }
 
+#logout {
+    display: inline;
+}
 
 .right {
     float: right;
