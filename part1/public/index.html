@@ -21,6 +21,15 @@
                 };
             },
             methods: {
+                async fetchDogImg() {
+                    try {
+                    const respone = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const data = await response.json();
+                    this.dog = data.message;
+                    } catch (error) {
+                    console.log("Failed to fetch image", error);
+                }
+                }
                 try {
                     async fetchDogImg() {
                     const respone = await fetch('https://dog.ceo/api/breeds/image/random');
