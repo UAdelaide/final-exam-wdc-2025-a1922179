@@ -32,14 +32,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, i) in rows">
-        <td>1</td>
-        <td>dummy</td>
-        <td>large</td>
-        <td>1</td>
-        <td>sumphoto</td>
-      </tr>
-      <tr>
+      <tr v-for="(row, i) in rows" v-bind:key="i">
         <td>1</td>
         <td>dummy</td>
         <td>large</td>
