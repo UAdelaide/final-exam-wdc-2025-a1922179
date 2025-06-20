@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(session({
-    secret: process.env.SESSION_SECRET, // stores in env file
+    secret: 'super', // stores in env file
     resave: false,
     saveUninitialized: false,
     cookie: {
