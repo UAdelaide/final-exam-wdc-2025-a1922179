@@ -90,6 +90,9 @@
         } catch (error) {
           console.log("Failed to fetch dogs", error);
         }
+      },
+      mounted() {
+        this.fetchDogs();
       }
     }).mount('#app');
   </script>
