@@ -85,11 +85,10 @@
           if (!res.ok) {
             throw new Error('Failed to fetch Dogs');
           } else {
-            this dogs = await res.json();
-            this
+            this.dogs = await res.json();
           }
         } catch (error) {
-
+          console.log("Failed to login", error);
         }
       }
     }).mount('#app');
