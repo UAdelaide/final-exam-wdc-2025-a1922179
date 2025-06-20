@@ -117,8 +117,8 @@ button:hover {
     border-top: 3px solid grey;
 }
 
-#table-dog tr {
-    border-top: 3px solid grey;
+#table-dog tr:nth-child(2) {
+    background-color: ;
 }
 
 .right {
