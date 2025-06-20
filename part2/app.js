@@ -22,12 +22,10 @@ app.use(session({
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const dogRouter = require(path.resolve(__dirname, '../part1/routes/dog_service.js'));
 
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api', dogRouter);
 
 // Export the app instead of listening here
 module.exports = app;
