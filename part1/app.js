@@ -72,11 +72,14 @@ let db;
     // Create a table if it doesn't exist
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Dogs (
-        dog_id INT AUTO_INCREMENT PRIMARY KEY,
-        owner_id INT NOT NULL,
-        name VARCHAR(50) NOT NULL,
-        size ENUM('small', 'medium', 'large') NOT NULL,
-        FOREIGN KEY (owner_id) REFERENCES Users(user_id)
+        application_id INT AUTO_INCREMENT PRIMARY KEY,
+        request_id INT NOT NULL,
+        walker_id INT NOT NULL,
+        applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        status ENUM('pending', 'accepted', 'rejected') DEFAULT 'pending',
+        FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
+        FOREIGN KEY (walker_id) REFERENCES Users(user_id),
+        CONSTRAINT unique_application UNIQUE (request_id, walker_id)
       )
     `);
 
