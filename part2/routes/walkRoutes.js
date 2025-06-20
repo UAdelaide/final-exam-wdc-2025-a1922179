@@ -39,6 +39,8 @@ router.post('/', async (req, res) => {
 router.post('/:id/apply', async (req, res) => {
   const requestId = req.params.id;
   const { walker_id } = req.body;
+  console.log('REQ PARAMS ID:', req.params.id);
+  console.log('REQ BODY:', req.body);
 
   try {
     await db.query(`
