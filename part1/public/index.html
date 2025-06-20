@@ -26,7 +26,9 @@
                     const respone = await fetch('https://dog.ceo/api/breeds/image/random');
                     const data = await response.json();
                     this.dog = data.message;
-                }
+                    }
+                } catch(error) {
+                    
                 }
 
             }
