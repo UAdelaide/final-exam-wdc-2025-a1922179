@@ -117,10 +117,10 @@ let db;
     }
 
     // Insert data if table is empty
-    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (rows3[0].count === 0) {
       await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'), ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Protein', 'large'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Hotdog', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Princess', 'large')
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Protein'), '2025-06-10 12:45:00', 60, 'Campbelltown Oval', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Hotdog'), '2025-06-10 9:00:00', 125, 'Morialta Falls', 'cancelled'), ((SELECT dog_id FROM Dogs WHERE name = 'Princess'), '2025-06-10 11:00:00', 30, 'Rostrevor', 'accepted')
       `);
     }
   } catch (err) {
