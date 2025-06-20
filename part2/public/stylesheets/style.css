@@ -114,7 +114,7 @@ button:hover {
 }
 
 #table-dog td {
-    border: ;
+    border-bottom: 3px solid grey;
 }
 
 .right {
