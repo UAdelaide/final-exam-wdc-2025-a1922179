@@ -19,90 +19,77 @@
       <input type="password" id="password" v-model="password" required>
       <button type="submit">Log in</button>
     </form>
-  </div>
+    </div>
 
-  <table id="table-dog">
-    <thead>
-      <tr>
-        <th>Dog ID</th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Owner ID</th>
-        <th>Photo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="dog in dogs" v-bind:key="dog.dog_id">
-        <td>{{ dog.dog_id }}</td>
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.size}}</td>
-        <td>{{ dog.owner_id }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table id="table-dog">
+      <thead>
+        <tr>
+          <th>Dog ID</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Owner ID</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs" v-bind:key="dog.dog_id">
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.size}}</td>
+          <td>{{ dog.owner_id }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <script>
-    const { createApp } = Vue;
-    createApp({
-      data() {
-        return {
-          message: 'Welcome to the Dog Walking Service!',
-          username: '',
-          password: '',
-          dogs: []
-        };
-      },
-      methods: {
-        async verifyLogin() {
-          try {
-            const res = await fetch('/api/users/login', {
-              method: 'POST',
-              headers: {'Content-Type':'application/json'},
-              body: JSON.stringify({
-                username: this.username,
-                password: this.password
-              })
-            });
-            if (!res.ok) {
-              throw new Error('Failed to login');
-            } else {
-              const data = await res.json();
-              if (data.user.role === 'walker') {
-                window.location.href = './walker-dashboard.html';
+    <script>
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            message: 'Welcome to the Dog Walking Service!',
+            username: '',
+            password: '',
+            dogs: []
+          };
+        },
+        methods: {
+          async verifyLogin() {
+            try {
+              const res = await fetch('/api/users/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  username: this.username,
+                  password: this.password
+                })
+              });
+              if (!res.ok) {
+                throw new Error('Failed to login');
               } else {
-                window.location.href = './owner-dashboard.html';
+                const data = await res.json();
+                if (data.user.role === 'walker') {
+                  window.location.href = './walker-dashboard.html';
+                } else {
+                  window.location.href = './owner-dashboard.html';
+                }
               }
+            } catch (error) {
+              console.log("Failed to login", error);
             }
-          } catch (error) {
-            console.log("Failed to login", error);
+          },
+          async fetchDogs() {
+            try {
+              const res = await fetch('part1/api/dogs');
+              if (!res.ok) {
+                throw new Error('Failed to fetch Dogs');
+              } else {
+                this.dogs = await res.json();
+              }
+            } catch (error) {
+              console.log("Failed to fetch dogs", error);
+            }
           }
-        }
-        async fetchDogs() {
-        try {
-          const res = await fetch('part1/api/dogs');
-          if (!res.ok) {
-            throw new Error('Failed to fetch Dogs');
-          } else {
-            this.dogs = await res.json();
-          }
-        } catch (error) {
-          console.log("Failed to fetch dogs", error);
-        }
-      }
-      },
-
-      async fetchDogs() {
-        try {
-          const res = await fetch('part1/api/dogs');
-          if (!res.ok) {
-            throw new Error('Failed to fetch Dogs');
-          } else {
-            this.dogs = await res.json();
-          }
-        } catch (error) {
-          console.log("Failed to fetch dogs", error);
-        }
-      },
+        },
       mounted() {
         this.fetchDogs();
       }
