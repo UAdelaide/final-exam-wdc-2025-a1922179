@@ -27,8 +27,8 @@
                     const data = await response.json();
                     this.dog = data.message;
                     }
-                } catch(error) {
-                    
+                } catch (error) {
+                    console.log("Failed to fetch image", error);
                 }
 
             }
