@@ -113,6 +113,10 @@ button:hover {
     text-align: left;
 }
 
+#table-dog td {
+    border: ;
+}
+
 .right {
     float: right;
 }
