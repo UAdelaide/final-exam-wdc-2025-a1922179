@@ -13,7 +13,7 @@ router.get('/walkrequests/open', async (req, res) => {
 });
 
 router.get('/walkers/summary', async (req, res) => {
-    const [rows] = await db.query('SELECT Users.username, COUNT(WalkRatings.rating) AS TotalRatings, AVG(WalkRatings.rating) AS AvgRating, COUNT(DISTINCT WalkRequests.request_id) AS WalksCompleted FROM WalkRatings LEFT JOIN Users ON Users.user_id = WalkRatings.walker_id LEFT JOIN WalkRequests ON WalkRatings.walker_id = WalkRequests.walker_id AND WalkRequests.status = 'completed' GROUP BY Users.username');
+    const [rows] = await db.query('SELECT Users.username, COUNT(WalkRatings.rating) AS TotalRatings, AVG(WalkRatings.rating) AS AvgRating, COUNT(DISTINCT WalkRequests.request_id) AS WalksCompleted FROM WalkRatings LEFT JOIN Users ON Users.user_id = WalkRatings.walker_id LEFT JOIN WalkRequests ON WalkRatings.walker_id = WalkRequests.walker_id AND WalkRequests.status = 'completed" GROUP BY Users.username');
     res.json(rows);
 });
 
