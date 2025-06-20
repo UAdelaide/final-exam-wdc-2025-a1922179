@@ -101,8 +101,8 @@ button:hover {
 }
 
 #logout {
-    display: flex;
-    al
+    display: block;
+    justify-content: right;
 }
 
 .right {
