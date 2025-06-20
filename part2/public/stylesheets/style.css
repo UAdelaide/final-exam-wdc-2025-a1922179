@@ -111,11 +111,10 @@ button:hover {
     width: 40%;
     border-collapse: collapse;
     text-align: left;
-    border: ;
 }
 
 #table-dog td {
-    border-bottom: 3px solid grey;
+    border-top: 3px solid grey;
 }
 
 .right {
