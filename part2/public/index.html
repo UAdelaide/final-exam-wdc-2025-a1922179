@@ -47,9 +47,9 @@
             } else {
               const data = await response.json();
               if (data.role === 'walker') {
-                window.location.href = '/walker-dashboard.html';
+                window.location.href = './walker-dashboard.html';
               } else {
-                window.location.href = '/owner-dashboard.html';
+                window.location.href = './owner-dashboard.html';
               }
             }
           } catch (error) {
