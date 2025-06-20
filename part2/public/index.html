@@ -83,17 +83,17 @@
         try {
           const res = await fetch('api/dogs');
           if (!res.ok) {
-              throw new Error('Failed to login');
+            throw new Error('Failed to fetch Dogs');
+          } else {
+            const data = await res.json();
+            if (data.user.role === 'walker') {
+              window.location.href = './walker-dashboard.html';
             } else {
-              const data = await res.json();
-              if (data.user.role === 'walker') {
-                window.location.href = './walker-dashboard.html';
-              } else {
-                window.location.href = './owner-dashboard.html';
-              }
+              window.location.href = './owner-dashboard.html';
             }
+          }
         } catch (error) {
-          
+
         }
       }
     }).mount('#app');
