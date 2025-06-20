@@ -34,7 +34,10 @@
       methods: {
         async verifyLogin() {
           try {
-            const res = await fetch('/login')
+            const res = await fetch('/login', {
+              method: 'POST',
+              
+            })
           }
         }
       }
