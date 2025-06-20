@@ -27,7 +27,7 @@ const dogRouter = require(path.resolve(__dirname, '../part1/routes/dog_service')
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api', );
+app.use('/api', dogRouter);
 
 // Export the app instead of listening here
 module.exports = app;
