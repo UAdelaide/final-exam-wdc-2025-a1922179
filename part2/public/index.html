@@ -41,8 +41,14 @@
                 username: this.username,
                 password: this.password
               })
-            })
-          } catch
+            });
+
+            const data = res.json();
+
+            
+          } catch (error) {
+
+          }
         }
       }
     }).mount('#app');
