@@ -106,6 +106,10 @@ button:hover {
     justify-content: right;
 }
 
+#table-dog {
+    justify-content: center;
+}
+
 .right {
     float: right;
 }
