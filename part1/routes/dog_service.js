@@ -13,7 +13,7 @@ router.get('/walkrequests/open', async (req, res) => {
 });
 
 router.get('/walkers/summary', async (req, res) => {
-    const [rows] = await db.query('SELECT Users.username, COUNT(WalkRatings.rating) AS TotalofRatings, ');
+    const [rows] = await db.query('SELECT Users.username, COUNT(WalkRatings.rating) AS TotalofRatings, AVG(');
     res.json(rows);
 });
 
