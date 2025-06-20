@@ -6,7 +6,7 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dogRouter = require('./routes/index');
+var dogRouter = require('./routes/dog_service');
 
 var app = express();
 
@@ -137,5 +137,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/dogs', dogRouter);
 
 module.exports = app;
