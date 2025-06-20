@@ -80,7 +80,7 @@
           try {
             const response = await fetch('/api/users/me');
             const data = await response.json();
-            return data.user_id;
+            return data.user.user_id;
           } catch (error) {
             console.log("Failed to fetch user details", error);
           }
