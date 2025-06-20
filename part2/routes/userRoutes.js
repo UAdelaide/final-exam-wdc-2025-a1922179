@@ -65,12 +65,12 @@ router.post('/login', async (req, res) => {
 
 // Log out
 router.get('/logout', (req, res) => {
-  if (err) {
-    return res.sendStatus(500).send("Failed to logout");
-  }
-
   // Clear the session
   req.session.destroy(() => {
+    if (err) {
+      return res.sendStatus(500).send("Failed to logout");
+    }
+
     res.clearCookie('connect.sid');
     res.sendStatus(200);
   });
