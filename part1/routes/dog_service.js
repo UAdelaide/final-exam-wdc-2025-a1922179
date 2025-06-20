@@ -8,7 +8,7 @@ router.get('/dogs', async (req, res) => {
 });
 
 router.get('/walkrequests/open', async (req, res) => {
-    const [rows] = await db.query('SELECT Dogs.dog_id, Dogs.size, Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = user_id');
+    const [rows] = await db.query('SELECT ');
     res.json(rows);
 });
 
