@@ -33,6 +33,28 @@
     <button type="submit" class="login-button">Continue</button>
   </form>
 
+  <form id="singleUserFormAdd">
+    <label for="username">Username</label>
+    <input type="text" id="username" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Password - Automacially hashed</label>
+    <input type="password" id="password" required>
+
+    <label for="role">Role</label>
+    <select id="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <div style="margin-top: 1em;">
+      <button type="submit" class="submit-btn" id="add-userBtn">Add</button>
+      <button type="reset" class="submit-btn" style="background-color: darkred;">Clear</button>
+    </div>
+  </form>
+
   <script>
     const { createApp } = Vue;
     createApp({
