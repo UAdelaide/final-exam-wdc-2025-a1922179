@@ -34,7 +34,7 @@
     <tbody>
       <tr v-for="(row, i) in rows" v-bind:key="i">
         <td v-for="(col, k) in cols" v-bind:key="k">
-
+          {{ col[k] }}
         </td>
       </tr>
     </tbody>
