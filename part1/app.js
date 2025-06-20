@@ -32,7 +32,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    // Create a table if it doesn't exist
+    // Create tables if it doesn't exist
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Dogs (
         dog_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,6 +41,8 @@ let db;
         size ENUM('small', 'medium', 'large') NOT NULL,
         FOREIGN KEY (owner_id) REFERENCES Users(user_id)
       )
+
+      
     `);
 
 
