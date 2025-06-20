@@ -45,7 +45,7 @@
             if (!res.ok) {
               throw new Error('Failed to login');
             } else {
-              const data = await response.json();
+              const data = await res.json();
               if (data.role === 'walker') {
                 window.location.href = './walker-dashboard.html';
               } else {
