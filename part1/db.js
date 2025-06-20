@@ -5,4 +5,6 @@ const db = mysql.createPool({
     user: 'root',
     password: 'mysql',
     database: 'DogWalkService'
-})
+});
+
+module.exports = db;
