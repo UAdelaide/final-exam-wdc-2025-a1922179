@@ -46,7 +46,9 @@
               throw new Error('Failed to login');
             } else {
               const data = await response.json();
-              if (this.response)
+              if (response.role == 'walker') {
+                
+              }
               //redirect to other page
             }
           } catch (error) {
