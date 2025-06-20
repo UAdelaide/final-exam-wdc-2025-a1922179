@@ -45,7 +45,7 @@
 
             const data = res.json();
 
-            if (!res.ok)
+            if (!res.ok) throw new Error('Failed to login');
           } catch (error) {
 
           }
