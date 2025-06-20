@@ -8,6 +8,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+let db;
+
 (async () => {
   try {
     // Connect to MySQL without specifying a database
