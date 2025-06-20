@@ -101,7 +101,8 @@ button:hover {
 }
 
 #logout {
-    display: inline;
+    display: flex;
+    al
 }
 
 .right {
