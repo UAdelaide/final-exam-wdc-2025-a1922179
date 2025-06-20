@@ -10,11 +10,14 @@
 </head>
 <body class="bg-light">
 
-  <section id="ask">
+  <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
-    <form>
-    </form>
-  </section>
+    <p class="lead">Username</p>
+    <input type="text" id="username" required>
+    <p class="lead">Password</p>
+    <input type="text" id="ask" required>
+    <button type="submit">Log in</button>
+  </div>
 
   <script>
     const { createApp } = Vue;
