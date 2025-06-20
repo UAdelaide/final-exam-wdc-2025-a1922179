@@ -77,6 +77,18 @@
             console.log("Failed to login", error);
           }
         }
+        async fetchDogs() {
+        try {
+          const res = await fetch('part1/api/dogs');
+          if (!res.ok) {
+            throw new Error('Failed to fetch Dogs');
+          } else {
+            this.dogs = await res.json();
+          }
+        } catch (error) {
+          console.log("Failed to fetch dogs", error);
+        }
+      }
       },
 
       async fetchDogs() {
