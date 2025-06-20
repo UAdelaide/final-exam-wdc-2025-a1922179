@@ -115,6 +115,14 @@ let db;
         INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'), ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Protein', 'large'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Hotdog', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Princess', 'large')
       `);
     }
+
+    // Insert data if table is empty
+    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (rows3[0].count === 0) {
+      await db.execute(`
+        INSERT INTO Dogs (owner_id, name, size) VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'), ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Protein', 'large'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Hotdog', 'small'), ((SELECT user_id FROM Users WHERE username = 'christina'), 'Princess', 'large')
+      `);
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
