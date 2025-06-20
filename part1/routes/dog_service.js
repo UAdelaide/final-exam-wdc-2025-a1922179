@@ -3,7 +3,7 @@ var router = express.Router();
 const db = require('./db');
 
 router.get('/dogs', async (req, res) => {
-  res.render('index', { title: 'Express' });
+    const [rows] = await.db.query('')
 });
 
 module.exports = router;
