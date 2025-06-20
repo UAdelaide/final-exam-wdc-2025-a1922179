@@ -117,6 +117,10 @@ button:hover {
     border-top: 3px solid grey;
 }
 
+#table-dog tr {
+    border-top: 3px solid grey;
+}
+
 .right {
     float: right;
 }
