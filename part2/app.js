@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-
+const session = require('express-session');
 require('dotenv').config();
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
     secret: process.env.SESSION_SECRET, // stores in env file
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
