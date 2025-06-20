@@ -85,12 +85,8 @@
           if (!res.ok) {
             throw new Error('Failed to fetch Dogs');
           } else {
-            const data = await res.json();
-            if (data.user.role === 'walker') {
-              window.location.href = './walker-dashboard.html';
-            } else {
-              window.location.href = './owner-dashboard.html';
-            }
+            this dogs = await res.json();
+            this
           }
         } catch (error) {
 
