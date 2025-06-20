@@ -33,9 +33,7 @@
     </thead>
     <tbody>
       <tr v-for="dog in dogs" v-bind:key="dog.dog_id">
-        <td v-for="(col, k) in cols" v-bind:key="k">
-          {{ col[k] }}
-        </td>
+        <td>{{ dog.dog_id }}</td>
       </tr>
     </tbody>
   </table>
