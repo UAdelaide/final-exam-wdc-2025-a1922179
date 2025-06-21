@@ -136,7 +136,7 @@
 
         async function VerifyUser() {
           try {
-            const res = await fetch('/api/users/logout');
+            const res = await fetch('/api/users/me');
             if (!res.ok) {
               throw new Error('Failed to log out');
             } else {
