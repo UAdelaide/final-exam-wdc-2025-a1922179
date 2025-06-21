@@ -15,7 +15,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: false
+        secure: false // If set to true, it will not work
     }
 }));
 
