@@ -123,7 +123,7 @@
 
         async function fetchDogs() {
           try {
-            const res = await fetch('/api/users/userDogs');
+            const res = await fetch('/api/users/allDogs');
             if (!res.ok) {
               throw new Error('Failed to fetch Dogs');
             } else {
