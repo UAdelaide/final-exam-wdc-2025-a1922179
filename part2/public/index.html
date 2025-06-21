@@ -88,16 +88,16 @@
             } catch (error) {
               console.log("Failed to fetch dogs", error);
             }
-          }
+          },
           async fetchDogImg() {
-                    try {
-                        const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                        const data = await response.json();
-                        this.dog = data.message;
-                    } catch (error) {
-                        console.log("Failed to fetch image", error);
-                    }
-                }
+            try {
+              const response = await fetch('https://dog.ceo/api/breeds/image/random');
+              const data = await response.json();
+              this.dog = data.message;
+            } catch (error) {
+              console.log("Failed to fetch image", error);
+            }
+          }
         },
       mounted() {
         this.fetchDogs();
