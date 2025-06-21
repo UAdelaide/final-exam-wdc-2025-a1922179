@@ -147,11 +147,10 @@
           }
         }
 
-        onMounted(() => {
+        onMounted(async () => {
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) {
-              throw new Error('Invalid User');
               window.location.href = './index.html';
             }
           } catch (err) {
