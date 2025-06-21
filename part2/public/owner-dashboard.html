@@ -123,7 +123,7 @@
 
         async function fetchDogs() {
           try {
-            const res = await fetch('/api/users/logout');
+            const res = await fetch('/api/users/userDogs');
             if (!res.ok) {
               throw new Error('Failed to log out');
             } else {
