@@ -140,7 +140,7 @@
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
-            
+            // Redirects to login page if successful
             if (!res.ok) {
               throw new Error('Failed to log out');
             } else {
