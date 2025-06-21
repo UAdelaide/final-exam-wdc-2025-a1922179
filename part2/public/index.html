@@ -92,9 +92,7 @@
           },
           fetchDogImg() {
             try {
-              const response = await fetch('https://dog.ceo/api/breeds/image/random');
-              const data = await response.json();
-              return data.message;
+              return 'https://dog.ceo/api/breeds/image/random';
             } catch (error) {
               console.log("Failed to fetch image", error);
             }
