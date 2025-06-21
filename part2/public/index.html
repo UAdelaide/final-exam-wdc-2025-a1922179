@@ -84,8 +84,8 @@
               if (!res.ok) {
                 throw new Error('Failed to fetch Dogs');
               } else {
-                this.dogs = await res.json();
-                for (let dog of dogs) {
+                const allDogs = await res.json();
+                for (let dog of allDogs) {
                   try {
                     const response = await fetch('https://dog.ceo/api/breeds/image/random');
                     const data = await response.json();
