@@ -125,7 +125,7 @@
           try {
             const res = await fetch('/api/users/userDogs');
             if (!res.ok) {
-              throw new Error('Failed to fetch D');
+              throw new Error('Failed to fetch Dogs');
             } else {
               dogs.value = await res.json();
             }
