@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Get
+// Get the user's dogs
 router.get('/userDogs', async (req, res) => {
   const ownerID = req.session.user.id;
   try {
