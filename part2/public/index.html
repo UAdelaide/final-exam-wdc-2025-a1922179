@@ -90,7 +90,7 @@
               if (!res.ok) {
                 throw new Error('Failed to fetch Dogs');
               } else {
-                // For each dog,
+                // For each dog, there will be a randomly different dog image
                 const allDogs = await res.json();
                 for (let dog of allDogs) {
                   try {
