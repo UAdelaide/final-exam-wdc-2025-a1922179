@@ -6,6 +6,9 @@ router.get('/dogs', async (req, res) => {
     // For Part 1
     // const [rows] = await db.query('SELECT Dogs.name, Dogs.size,
     // Users.username FROM Dogs INNER JOIN Users ON Dogs.owner_id = user_id');
+
+    // Adjusted for Part 2
+    const [rows] = await db.query('SELECT Dogs.name, Dogs.size,');
     res.json(rows);
 });
 
