@@ -92,6 +92,7 @@
                     dog.photo = data.message
                   } catch (error) {
                     console.log("Failed to fetch image", error);
+                    dog.photo = '';
                   }
                 }
               }
