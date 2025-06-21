@@ -74,6 +74,10 @@ footer h4 {
     float: right;
 }
 
+h2 {
+    justify-content: center;
+}
+
 .tag {
     background-color: rgb(225, 236, 244);
     color: rgb(57, 115, 157);
