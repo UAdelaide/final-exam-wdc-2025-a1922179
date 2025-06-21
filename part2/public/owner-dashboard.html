@@ -136,10 +136,11 @@
           }
         }
 
-        // 
+        // Calls the log out route
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
+            
             if (!res.ok) {
               throw new Error('Failed to log out');
             } else {
