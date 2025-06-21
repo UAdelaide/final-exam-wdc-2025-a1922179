@@ -122,7 +122,7 @@
           }
         }
 
-        // Fetch all the user's dogs
+        // Fetch all the user's dogs to appear when selecting the dog
         async function fetchDogs() {
           try {
             const res = await fetch('/api/users/allDogs');
@@ -136,6 +136,7 @@
           }
         }
 
+        // 
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
