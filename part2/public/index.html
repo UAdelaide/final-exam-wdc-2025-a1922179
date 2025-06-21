@@ -89,7 +89,7 @@
                   try {
                     const response = await fetch('https://dog.ceo/api/breeds/image/random');
                     const data = await response.json();
-                    return { ...dogs, photo: data.message };
+                    dog.photo = data.message
                   } catch (error) {
                     console.log("Failed to fetch image", error);
                   }
