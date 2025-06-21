@@ -118,6 +118,10 @@ button:hover {
     border-top: 3px solid grey;
 }
 
+.img {
+    padding: 10px;
+}
+
 .right {
     float: right;
 }
