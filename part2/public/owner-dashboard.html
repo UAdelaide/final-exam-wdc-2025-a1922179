@@ -134,6 +134,19 @@
           }
         }
 
+        async function VerifyUser() {
+          try {
+            const res = await fetch('/api/users/logout');
+            if (!res.ok) {
+              throw new Error('Failed to log out');
+            } else {
+              window.location.href = './index.html';
+            }
+          } catch (err) {
+            error.value = err.message;
+          }
+        }
+
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
