@@ -83,6 +83,7 @@
               if (!res.ok) {
                 throw new Error('Failed to fetch Dogs');
               } else {
+                console.log("Found route!");
                 this.dogs = await res.json();
               }
             } catch (error) {
