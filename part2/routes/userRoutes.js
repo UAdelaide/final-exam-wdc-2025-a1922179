@@ -63,6 +63,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Log out
+router.get('/logout', (req, res) => {
+  // Clear the session
+  req.session.destroy(() => {
+    res.clearCookie('connect.sid');
+    res.sendStatus(200);
+  });
+});
+
 // Get the user's dogs
 router.get('/allDogs', async (req, res) => {
   const ownerID = req.session.user.id;
@@ -72,15 +81,6 @@ router.get('/allDogs', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users dogs' });
   }
-});
-
-// Log out
-router.get('/logout', (req, res) => {
-  // Clear the session
-  req.session.destroy(() => {
-    res.clearCookie('connect.sid');
-    res.sendStatus(200);
-  });
 });
 
 module.exports = router;
