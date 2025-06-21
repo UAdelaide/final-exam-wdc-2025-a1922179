@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
 
     const user = rows[0];
 
-    // Creates a l
+    // Creates a login session after successfully logging in
     req.session.user = {
       id: user.user_id,
       username: user.username,
