@@ -106,12 +106,10 @@
               window.location.href = './index.html';
               return;
             }
-            loadWalks();
-            fetchDogs();
+            loadWalkRequests();
           } catch (err) {
             error.value = err.message;
           }
-          loadWalkRequests();
         });
 
         return {
