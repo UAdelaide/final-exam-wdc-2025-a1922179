@@ -85,6 +85,7 @@
               } else {
                 console.log("Found route!");
                 this.dogs = await res.json();
+                console.log(this.dogs);
               }
             } catch (error) {
               console.log("Failed to fetch dogs", error);
