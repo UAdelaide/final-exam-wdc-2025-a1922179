@@ -53,10 +53,11 @@
             message: 'Welcome to the Dog Walking Service!',
             username: '',
             password: '',
-            dogs: [] // 
+            dogs: [] // Stores all dog related info
           };
         },
         methods: {
+          // Verify if the user has 
           async verifyLogin() {
             try {
               const res = await fetch('/api/users/login', {
