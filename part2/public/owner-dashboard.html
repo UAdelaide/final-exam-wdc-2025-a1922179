@@ -123,7 +123,10 @@
 
         async function fetchDogs() {
           try {
-            const res = await fetch('/api/users/allDogs');
+            const res = await fetch('/api/users/allDogs',  {
+              method: 'GET',
+              credentials: 'include'
+            });
             if (!res.ok) {
               throw new Error('Failed to fetch Dogs');
             } else {
