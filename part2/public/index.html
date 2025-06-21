@@ -71,6 +71,7 @@
               if (!res.ok) {
                 throw new Error('Failed to login');
               } else {
+                // Redirects to walker or owner dashboard if successful
                 const data = await res.json();
                 if (data.user.role === 'walker') {
                   window.location.href = './walker-dashboard.html';
