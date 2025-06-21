@@ -21,7 +21,7 @@
     </form>
     </div>
 
-    <table class="table mt-5" v-if="dogs.le">
+    <table class="table mt-5" v-if="dogs.length">
       <thead>
         <tr>
           <th>Dog ID</th>
@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog in dogs" v-bind:key="dog.dog_id">
+        <tr v-for="dog in dogs" v-bind:key="dog.name">
           <td>{{ dog.name }}</td>
           <td>{{ dog.size}}</td>
           <td>{{ dog.username }}</td>
