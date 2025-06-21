@@ -99,8 +99,18 @@
           }
         }
 
-        onMounted(() => {
-          
+        onMounted(async() => {
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) {
+              window.location.href = './index.html';
+              return;
+            }
+            loadWalks();
+            fetchDogs();
+          } catch (err) {
+            error.value = err.message;
+          }
           loadWalkRequests();
         });
 
