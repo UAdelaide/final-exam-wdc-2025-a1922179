@@ -19,7 +19,6 @@
       <input type="password" id="password" v-model="password" required>
       <button type="submit">Log in</button>
     </form>
-    </div>
 
     <table class="table mt-5" v-if="dogs.length">
       <thead>
@@ -39,6 +38,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
 
     <script>
       const { createApp } = Vue;
