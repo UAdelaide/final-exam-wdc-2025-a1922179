@@ -134,18 +134,6 @@
           }
         }
 
-        async function VerifyUser() {
-          try {
-            const res = await fetch('/api/users/me');
-            if (!res.ok) {
-              throw new Error('Invalid User');
-              window.location.href = './index.html';
-            }
-          } catch (err) {
-            error.value = err.message;
-          }
-        }
-
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
