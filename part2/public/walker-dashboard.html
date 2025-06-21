@@ -86,6 +86,7 @@
           }
         }
 
+        // Allows the user to log out
         async function logOut() {
           try {
             const res = await fetch('/api/users/logout');
@@ -100,6 +101,7 @@
         }
 
         onMounted(async() => {
+          // Checks if a user is logged in or not on load
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) {
