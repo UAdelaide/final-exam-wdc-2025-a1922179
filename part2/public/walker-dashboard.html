@@ -104,6 +104,7 @@
           // Checks if a user is logged in or not on load
           try {
             const res = await fetch('/api/users/me');
+            // If not then redirects to log in page
             if (!res.ok) {
               window.location.href = './index.html';
               return;
