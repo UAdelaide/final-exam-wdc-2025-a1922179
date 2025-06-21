@@ -125,7 +125,7 @@
           try {
             const res = await fetch('/api/users/userDogs');
             if (!res.ok) {
-              throw new Error('Failed to log out');
+              throw new Error('Failed to fetch D');
             } else {
               dogs.value = await res.json();
             }
@@ -158,7 +158,6 @@
           message,
           error,
           submitWalkRequest,
-          fetchDogs,
           logOut
         };
       }
