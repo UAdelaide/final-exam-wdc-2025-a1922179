@@ -83,13 +83,14 @@
               console.log("Failed to login", error);
             }
           },
-          // 
+          // Fetches all dogs in the database
           async fetchDogs() {
             try {
               const res = await fetch('/api/dogs/dogs');
               if (!res.ok) {
                 throw new Error('Failed to fetch Dogs');
               } else {
+                // For each dog,
                 const allDogs = await res.json();
                 for (let dog of allDogs) {
                   try {
