@@ -63,6 +63,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get()
+
 // Log out
 router.get('/logout', (req, res) => {
   // Clear the session
